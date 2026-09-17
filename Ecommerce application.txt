@@ -1,0 +1,86 @@
+products={}
+def add_product():
+    pid=input("Enter product id:")
+    if pid in products:
+       print("product already exists")
+    else:
+      name=input("Enter the product name:")
+      price=float(input("Enter the price:"))
+      stock=int(input("Enter the quantity:"))
+      products[pid]={"name":name,"price":price,"stock":stock}
+def view_products():
+   if not products:
+       print("no product available")
+   else:
+       print("Available products:")
+       for pid,details in products.items():
+           print(f"Id:{pid},Name:{details['name']},Price:{details['price']},Stock:{details['stock']}")
+def menu():
+  while True:
+    print("\n Ecommerce application")
+    print("1.Add products")
+    print("2.View products")
+    choice=input("Choose an option:")
+    if choice=="1":
+       add_product()
+    if choice=="2":
+       view_products()
+menu()
+products={}
+def add_product():
+   pid=input("Enter product id:")
+   if pid in products:
+      print("product already exists")
+   else:
+     name=input("Enter the product name:")
+     price=float(input("Enter the price:"))
+     stock=int(input("Enter the quantity:"))
+     products[pid]={"name":name,"price":price,"stock":stock}
+def menu():
+   while True:
+     print("\n Ecommerce application")
+     print("1.Add products")
+     print("2.View products")
+     choice=input("Choose an option:")
+     if choice=="1":
+       add_product()
+menu()
+
+products={}
+def add_product():
+     pid=input("Enter product id:")
+     if pid in products:
+        print("product already exists")
+     else:
+       name=input("Enter the product name:")
+       price=float(input("Enter the price:"))
+       stock=int(input("Enter the quantity:"))
+       products[pid]={"name":name,"price":price,"stock":stock}
+def view_products():
+  if not products:
+      print("no product available")
+  else:
+     print("Available products:")
+     for pid,details in products.items():
+         print(f"Id:{pid},Name:{details['name']},Price:{details['price']},Stock:{details['stock']}")
+def place_order():
+   pid=input("Enter productId to buy:")
+   if pid in products:
+         quantity=int(input("Enter quanity:"))
+    if 0<quantity<=products[pid]["stock"]:
+           products[pid]["stock"]-=quantity
+    print("order placed Successfully")
+def menu():
+  while True:
+    print("\n Ecommerce application")
+    print("1.Add products")
+    print("2.View products")
+    print("3.Place Order")
+    choice=input("Choose an option:")
+    if choice=="1":
+       add_product()
+    if choice=="2":
+       view_products()
+    if choice=="3":
+       place_order()
+menu()
